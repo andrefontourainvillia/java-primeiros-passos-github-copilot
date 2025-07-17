@@ -3,6 +3,9 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace/java-primeiros-passos-github-copilot",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace/java-primeiros-passos-github-copilot,type=bind,consistency=cached"
+  ],
   "shutdownAction": "stopCompose",
   "forwardPorts": [
     8080,
