@@ -12,6 +12,20 @@
     27017,
     8081
   ],
+  "hostRequirements": {
+        "memory": "8gb",
+        "cpus": 4
+  },
+  "portsAttributes": {
+      "8080": {
+          "label": "Mergington App",
+          "onAutoForward": "notify"
+      },
+      "8081": {
+          "label": "MongoDB Express",
+          "onAutoForward": "notify"
+      }
+  },
   "postCreateCommand": "./.devcontainer/scripts/setup.sh",
   "customizations": {
     "vscode": {
