@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 # Script para inicializar MongoDB no Dev Container
 # Este script é executado automaticamente quando o container é criado
 

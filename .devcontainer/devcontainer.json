@@ -18,39 +18,30 @@
       "extensions": [
         "GitHub.copilot",
         "GitHub.copilot-chat",
-        "vscjava.vscode-java-pack",
-        "vscjava.vscode-java-test",
+        "github.vscode-pull-request-github",
+        "redhat.java",
+        "vscjava.vscode-maven",
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-dependency",
         "vmware.vscode-spring-boot",
-        "vscjava.vscode-spring-initializr",
-        "vscjava.vscode-spring-boot-dashboard",
-        "mongodb.mongodb-vscode",
+        "vscjava.vscode-java-test",
+        "ryanluker.vscode-coverage-gutters",
+        "ms-azuretools.vscode-docker",
         "jebbs.plantuml",
         "systemticks.c4-dsl-extension",
-        "ms-azuretools.vscode-docker",
-        "ms-vscode-remote.remote-containers",
-        "sonarsource.sonarlint-vscode",
-        "eamodio.gitlens",
-        "github.vscode-pull-request-github",
-        "pkief.material-icon-theme",
-        "humao.rest-client",
-        "rangav.vscode-thunder-client",
-        "redhat.vscode-yaml",
-        "redhat.vscode-xml"
+        "shengchen.vscode-checkstyle",
+        "SonarSource.sonarlint-vscode"
       ],
       "settings": {
         "json.schemaDownload.enable": true,
+        "github.copilot.nextEditSuggestions.enabled": true,
         "java.configuration.detectJdksAtStart": false,
         "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m",
         "java.compile.nullAnalysis.mode": "automatic",
         "java.saveActions.organizeImports": true,
         "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
         "spring-boot.ls.problem.application-properties.unknown-property": "warning",
-        "mongodb.connectionSaving.hideOptionToChooseWhereToSaveNewConnections": false,
         "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-          "source.organizeImports": "explicit",
-          "source.fixAll": "explicit"
-        },
         "files.associations": {
           "*.puml": "plantuml",
           "*.c4puml": "plantuml"
@@ -59,7 +50,7 @@
         "plantuml.render": "PlantUMLServer",
         "terminal.integrated.defaultProfile.linux": "bash",
         "git.autofetch": true,
-        "git.confirmSync": false
+        "git.confirmSync": true
       }
     }
   },

@@ -18,8 +18,4 @@ chmod +x .devcontainer/scripts/*.sh
 echo "Initializing MongoDB..."
 ./.devcontainer/scripts/init-mongodb.sh
 
-# Run test setup
-echo "Running test setup..."
-./.devcontainer/scripts/test-setup.sh
-
 echo "Development environment setup completed!"
