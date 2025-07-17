@@ -44,6 +44,10 @@ else
     echo "⏳ MongoDB ainda inicializando..."
 fi
 
+# Acessando diretório do projeto
+echo "🔍 Acessando diretório do projeto..."
+cd /workspaces/java-primeiros-passos-github-copilot
+
 # Testar compilação do projeto
 echo "🔨 Testando compilação..."
 mvn clean compile -q
