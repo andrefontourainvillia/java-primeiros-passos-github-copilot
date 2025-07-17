@@ -2,14 +2,14 @@
   "name": "Java 21 Spring Boot Development",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspace/java-primeiros-passos-github-copilot",
   "shutdownAction": "stopCompose",
   "forwardPorts": [
     8080,
     27017,
     8081
   ],
-  "postCreateCommand": "sudo apt install -y maven sl libgpm2 libncurses6  && sudo apt-get update && sudo apt-get upgrade -y && mvn clean compile",
+  "postCreateCommand": "sudo apt-get update -y && sudo apt install -y maven sl libgpm2 libncurses6  &&  sudo apt-get upgrade -y && mvn clean compile",
   "customizations": {
     "vscode": {
       "extensions": [
