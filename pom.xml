@@ -67,7 +67,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             
-            <!-- JaCoCo Plugin for Code Coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -87,32 +86,6 @@
                     </execution>
                 </executions>
             </plugin>
-            
-            <!-- PlantUML Plugin for Diagrams -->
-            <!--
-            <plugin>
-                <groupId>com.github.jeluard</groupId>
-                <artifactId>plantuml-maven-plugin</artifactId>
-                <version>1.2</version>
-                <configuration>
-                    <sourceFiles>
-                        <directory>${basedir}/docs/diagrams</directory>
-                        <includes>
-                            <include>**/*.puml</include>
-                        </includes>
-                    </sourceFiles>
-                    <outputDirectory>${basedir}/docs/generated</outputDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>generate-diagrams</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            -->
         </plugins>
     </build>
 </project>

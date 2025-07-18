@@ -1,79 +1,39 @@
 {
-  "name": "Java 21 Spring Boot Development",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspaces/java-primeiros-passos-github-copilot",
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspaces/java-primeiros-passos-github-copilot,type=bind,consistency=cached"
-  ],
-  "shutdownAction": "stopCompose",
-  "forwardPorts": [
-    8080,
-    27017,
-    8081
-  ],
-  "hostRequirements": {
-        "memory": "8gb",
-        "cpus": 4
+  "name": "Java 21 Development",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installMaven": true,
+      "installGradle": false
+    }
   },
+  "forwardPorts": [8080],
   "portsAttributes": {
-      "8080": {
-          "label": "Mergington App",
-          "onAutoForward": "notify"
-      },
-      "8081": {
-          "label": "MongoDB Express",
-          "onAutoForward": "notify"
-      }
+    "8080": {
+      "label": "Spring Boot App",
+      "onAutoForward": "notify"
+    }
   },
-  "postCreateCommand": "./.devcontainer/scripts/setup.sh",
+  "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
   "customizations": {
     "vscode": {
       "extensions": [
-        "GitHub.copilot",
-        "GitHub.copilot-chat",
-        "github.vscode-pull-request-github",
         "redhat.java",
         "vscjava.vscode-maven",
-        "vscjava.vscode-java-debug",
-        "vscjava.vscode-java-dependency",
+        "vscjava.vscode-java-debug", 
         "vmware.vscode-spring-boot",
-        "vscjava.vscode-java-test",
-        "ryanluker.vscode-coverage-gutters",
-        "ms-azuretools.vscode-docker",
-        "jebbs.plantuml",
-        "systemticks.c4-dsl-extension",
-        "shengchen.vscode-checkstyle",
-        "SonarSource.sonarlint-vscode"
+        "GitHub.copilot"
       ],
       "settings": {
-        "json.schemaDownload.enable": true,
-        "github.copilot.nextEditSuggestions.enabled": true,
         "java.configuration.detectJdksAtStart": false,
-        "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m",
-        "java.compile.nullAnalysis.mode": "automatic",
-        "java.saveActions.organizeImports": true,
-        "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-        "spring-boot.ls.problem.application-properties.unknown-property": "warning",
-        "editor.formatOnSave": true,
-        "files.associations": {
-          "*.puml": "plantuml",
-          "*.c4puml": "plantuml"
-        },
-        "plantuml.server": "https://www.plantuml.com/plantuml",
-        "plantuml.render": "PlantUMLServer",
-        "terminal.integrated.defaultProfile.linux": "bash",
-        "git.autofetch": true,
-        "git.confirmSync": true
+        "java.jdt.ls.vmargs": "-Xmx1G -Xms100m",
+        "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
   },
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "none",
-      "installMaven": "true",
-      "installGradle": "false"
-    }
+  "remoteEnv": {
+    "SPRING_PROFILES_ACTIVE": "h2",
+    "JAVA_OPTS": "-Xmx512m"
   }
 }

@@ -54,7 +54,6 @@ target/
 *.iws
 *.iml
 *.ipr
-.vscode/
 *.swp
 *.swo
 *~

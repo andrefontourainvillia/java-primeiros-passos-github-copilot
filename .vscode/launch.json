@@ -5,15 +5,33 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Mergington WebApp",
-      "type": "debugpy",
+      "name": "Launch High School Management Application",
+      "type": "java",
       "request": "launch",
-      "module": "uvicorn",
-      "args": [
-        "src.app:app",
-        "--reload"
+      "mainClass": "com.mergington.highschool.HighSchoolManagementApplication",
+      "projectName": "high-school-management",
+      "args": [],
+      "vmArgs": [],
+      "env": {
+        "SPRING_PROFILES_ACTIVE": "dev"
+      },
+      "console": "internalConsole"
+    },
+    {
+      "name": "Debug High School Management Application",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "com.mergington.highschool.HighSchoolManagementApplication",
+      "projectName": "high-school-management",
+      "args": [],
+      "vmArgs": [
+        "-Xdebug",
+        "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
       ],
-      "jinja": true
+      "env": {
+        "SPRING_PROFILES_ACTIVE": "dev"
+      },
+      "console": "internalConsole"
     }
   ]
 }
